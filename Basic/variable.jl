@@ -99,3 +99,16 @@ end
 
 # sum_two_numbers(1, 2) # throw Error: MethodError: no method matching sum_two_numbers(::Int64, ::Int64)
 println(sum_two_numbers(1.0, 2.0)) # Print the sum of 1.0 and 2.0, which is 3.0
+
+
+# How we can validate if an expression is of a particular type in Julia?
+# By (expression)::exprType
+# We can catch errors this way
+
+((7+8)*2)::Int64 # This will return 30, which is of type Int64
+
+# ((7+8)*2.0)::Int64 # This will throw an error: MethodError: no method matching (::Type{Float64})(::Int64)
+
+# To declare a variable as a constant in Julia, you can use the const keyword. For example:
+const Username = "admin"
+# Username = "user" # This will throw an error: ERROR: cannot assign a value to variable Username from module Main
