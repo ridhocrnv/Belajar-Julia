@@ -86,3 +86,16 @@ println(p, ", ", q, ", ", r) # Print the values of p, q, and r, which are 1, 2, 
 
 p, q = q, p # You can also swap the values of two variables using multiple assignment.
 println(p, ", ", q) # Print the values of p and q, which are now 2 and 1 respectively
+
+
+#= Till now, we did not define the variable types and Julia would automatically infer the types based
+    on the assigned values. However, you can also explicitly specify the type
+    of a variable in Julia using the syntax variable_name::Type. For example:
+=#
+
+function sum_two_numbers(x::Float64, y::Float64)
+    return x + y;
+end
+
+# sum_two_numbers(1, 2) # throw Error: MethodError: no method matching sum_two_numbers(::Int64, ::Int64)
+println(sum_two_numbers(1.0, 2.0)) # Print the sum of 1.0 and 2.0, which is 3.0
